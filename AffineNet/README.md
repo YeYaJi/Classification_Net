@@ -20,5 +20,5 @@ All_affine_Net(
   )
 )
 ```
-![image](https://github.com/704494891/Classification_Net/tree/master/AlexNet/ReadMe_images/net.png)
+![image](https://github.com/704494891/Classification_Net/blob/master/AlexNet/ReadMe_images/net.png)
 

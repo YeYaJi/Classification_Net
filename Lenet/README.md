@@ -14,6 +14,6 @@ LeNet(
 )
 
 ```
-![image](https://github.com/704494891/Classification_Net/tree/master/Lenet/ReadMe_images/net.png)
+![image](https://github.com/704494891/Classification_Net/blob/master/Lenet/ReadMe_images/net.png)
 
 
