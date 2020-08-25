@@ -18,9 +18,9 @@ with open('./test_epoch_correct_rate', "r") as f:
         test_epoch_correct_rate.append(data)
 
 plt.title("train+test_epoch_correct_rate")
-plt.plot(np.arange(1, epoch + 1), train_epoch_correct_rate,label="train_epoch_correct_rate")
-plt.plot(np.arange(1, epoch + 1), test_epoch_correct_rate,label="test_epoch_correct_rate")
-plt.legend() # 显示图例
+plt.plot(np.arange(1, epoch + 1), train_epoch_correct_rate, label="train_epoch_correct_rate")
+plt.plot(np.arange(1, epoch + 1), test_epoch_correct_rate, label="test_epoch_correct_rate")
+plt.legend()  # 显示图例
 plt.show()
 # loss的图
 with open('./train_epoch_loss_ave', "r") as f:
@@ -36,5 +36,5 @@ with open('./test_epoch_loss_ave', "r") as f:
 plt.title("train+test_epoch_loss_ave")
 plt.plot(np.arange(1, epoch + 1), train_epoch_loss_ave, label="train_epoch_loss_ave")
 plt.plot(np.arange(1, epoch + 1), test_epoch_loss_ave, label="test_epoch_loss_ave")
-plt.legend() # 显示图例
+plt.legend()  # 显示图例
 plt.show()

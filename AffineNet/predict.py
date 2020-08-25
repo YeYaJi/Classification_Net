@@ -19,7 +19,7 @@ transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize([0.5
 test_dataset = torchvision.datasets.MNIST("./data", transform=transform)
 test_loader = DataLoader(test_dataset, batch_size=test_batch_size, shuffle=False, num_workers=12, drop_last=True)
 
-model = net.all_affine_Net(28 * 28, 300, 100, 10)
+model = net.All_affine_Net(28 * 28, 300, 100, 10)
 
 model.load_state_dict(torch.load("./weights.pth"))
 model.to(device)

@@ -32,3 +32,7 @@ class LeNet(nn.Module):
         layer_af2_out = F.relu(self.fc2(layer_af1_out))
         layer_af3_out = self.fc3(layer_af2_out)
         return layer_af3_out
+
+if __name__ == "__main__":
+    model = LeNet()
+    print(model)

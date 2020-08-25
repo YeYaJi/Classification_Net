@@ -21,10 +21,10 @@ momentum = 0.5
 
 device = torch.device("cuda:0")
 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize([0.5], [0.5])])
-train_dataset = torchvision.datasets.MNIST("./data/train", train=True, transform=transform, download=False)
+train_dataset = torchvision.datasets.MNIST("./data", train=True, transform=transform, download=False)
 train_loader = DataLoader(train_dataset, batch_size=train_batch_size, shuffle=True, drop_last=True, num_workers=12)
 
-model = net.all_affine_Net(28 * 28, 300, 100, 10)
+model = net.All_affine_Net(28 * 28, 300, 100, 10)
 model.to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=lr, momentum=momentum)
@@ -63,7 +63,7 @@ for n_epoch in pbar:
     epoch_loss_rate.append(train_loss / len(train_loader))
     # 进度条左侧显示右侧显示
     pbar.set_description("epoch=%d" % n_epoch)
-    pbar.set_postfix(loss=train_loss / len(train_loader), correct=train_loss / len(train_loader),
+    pbar.set_postfix(loss=train_loss / len(train_loader), correct=epoch_num_correct / (len(train_loader) * train_batch_size),
                      lr=optimizer.param_groups[0]["lr"])
 
 # 数据保存

@@ -1,4 +1,4 @@
-# 复现算法
+# BP
 
 BP网络
 全部由全连接层组成
@@ -20,5 +20,5 @@ All_affine_Net(
   )
 )
 ```
-![image](https://github.com/704494891/Classification_Net/blob/master/AffineNet/ReadMe_images/net.png)
+![image](https://github.com/704494891/Classification_Net/tree/master/AlexNet/ReadMe_images/net.png)
 

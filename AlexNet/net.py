@@ -59,3 +59,7 @@ class AlexNet(nn.Module):
             elif isinstance(m, nn.Linear):
                 m.init.normal_(m.weight, 0, 0.01)  # 正态分布赋予初值
                 nn.init.constant_(m.bias, 0)
+
+if __name__=="__main__":
+    model = AlexNet()
+    print(model)
