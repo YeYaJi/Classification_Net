@@ -1,0 +1,10 @@
+.idea
+__pycache__
+weights.pth
+flower_data
+classes.json
+test_epoch_correct_rate
+test_epoch_loss_ave
+train_epoch_correct_rate
+train_epoch_loss_ave
+train_epoch_loss_rate
