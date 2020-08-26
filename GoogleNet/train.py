@@ -14,8 +14,8 @@ import time
 import net
 import json
 
-train_batch_size = 5
-test_batch_size = 5
+train_batch_size = 8
+test_batch_size = 8
 epoch = 5
 lr = 0.001
 num_classes = 5
@@ -54,9 +54,7 @@ json_str = json.dumps(classes_r, indent=4)
 with open("classes.json", "w") as classes_file:
     classes_file.write(json_str)
 
-feature_net = net.Feature_mode(net_name="vgg16")
-feature = feature_net.make_feature()
-model = net.Vgg(num_classes=num_classes, features=feature)
+model = net.GoogleNet(num_classes=num_classes)
 # print(list(model.parameters()))#这里可以看一下默认参数的样子
 
 model.to(device)
@@ -74,19 +72,22 @@ best_eval_correct_rate = 0
 pbar = tqdm(range(1, epoch + 1))
 step = 0
 for n_epoch in pbar:
-    model.train()
     # 参数
     train_loss = 0
     epoch_num_correct = 0
     # if int(n_epoch) % 5 == 0:
     #     optimizer.param_groups[0]["lr"] *= 0.1  # 优化器中lr的位置
     for img, label in train_loader:
+        model.train()
         step += 1
         img = img.to(device)
         label = label.to(device)
 
-        output = model(img)
-        loss = criterion(output, label)
+        output, aux1, aux2 = model(img)
+        loss_output = criterion(output, label)
+        loss_aux1 = criterion(aux1, label)
+        loss_aux2 = criterion(aux2, label)
+        loss = loss_output + 0.3 * loss_aux1 + 0.3 * loss_aux2
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
