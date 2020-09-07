@@ -1,5 +1,6 @@
 # MobelNet
-###MobelNet—V1牛逼在哪了？
+### MobelNet—V1牛逼在哪了？
+
   引入了Depthwise Separable Convolution
 （Depthwise Separable Convolution，DSC）=Depthwise Convolution（DWC）+ Pointwise convolution（PWC）
 ,减少了大量的学习参数,
@@ -11,7 +12,7 @@
 我的理解哈，１Ｘ１的卷积就是全连接层，只不过可以用控制输出层数，增加维度
 
 ![image](https://github.com/704494891/Classification_Net/blob/master/MobelNet_V2/ReadMe_images/PW.png)
-
+![image](https://github.com/704494891/Classification_Net/blob/master/MobelNet_V2/ReadMe_images/DW+PW.png)
 3. 其中第一个卷积层为传统的卷积；前面的卷积层均有bn和relu，最后一个全连接层只有BN，无ReLU。
 ![image](https://github.com/704494891/Classification_Net/blob/master/MobelNet_V2/ReadMe_images/jiegou.png)
 
