@@ -145,6 +145,8 @@ for n_epoch in pbar:
             if max_index[i] == label[i]:
                 eval_num_correct += 1
 
+
+
     eval_correct_rate = eval_num_correct / len(test_dataset)
     eval_epoch_correct_rate.append(eval_correct_rate)
     eval_epoch_loss_ave.append(eval_loss / len(test_loader))
